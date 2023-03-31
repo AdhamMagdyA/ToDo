@@ -1,7 +1,7 @@
 const todoInput = document.getElementById("todo-input");
 const addTodoButton = document.getElementById("add-todo");
 const todoList = document.getElementById("todo-list");
-let todos = [];
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 function renderTodoList() {
   todoList.innerHTML = "";
@@ -23,6 +23,7 @@ function addTodo() {
   todos.push(todo);
   renderTodoList();
   todoInput.value = "";
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function deleteTodoByIndex(index) {
@@ -31,6 +32,7 @@ function deleteTodoByIndex(index) {
   }
   todos.splice(index, 1);
   renderTodoList();
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 addTodoButton.addEventListener("click", (event) => {
@@ -44,3 +46,5 @@ todoList.addEventListener("click", (event) => {
     deleteTodoByIndex(index);
   }
 });
+
+window.addEventListener("load", renderTodoList);

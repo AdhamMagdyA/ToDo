@@ -2,6 +2,11 @@
 
 This is a simple web app that allows you to create and manage a list of todo items. You can add new items to the list, view all the items, and delete items that you no longer need.
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/60877873/229116469-b5600cfe-ee30-499f-9aeb-47d06e18e3d2.png" alt="image">
+</div>
+
+
 # Getting Started
 
 To use the app, simply open the index.html file in your web browser. You should see a form where you can enter a new todo item and a list of all the items that you have added.
